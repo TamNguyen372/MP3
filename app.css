@@ -1,0 +1,119 @@
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: "PopPins", sans-serif;
+    padding: 20px;
+}
+
+.music {
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 35px 15px 30px;
+}
+
+.music-thumb {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 25px;
+}
+
+.music-thumb.is-playing {
+    animation: spinner 5s infinite linear;
+}
+
+.music-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100rem;
+    box-shadow: 0 0 0 3px #ffb86c, 0 0 0 6px transparent, 0 0 0 9px #ff6bcb;
+}
+
+.music-name {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.timer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: black;
+    margin-bottom: 40px;
+}
+
+.control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 60px;
+}
+
+.play {
+    position: relative;
+}
+
+.player-inner {
+    width: 50px;
+    height: 50px;
+    border-radius: 100rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.play:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right bottom, #ff6bcb, #ffb86c);
+    transform: scale(1.5);
+    border-radius: 100rem;
+}
+
+.play-repeat,
+.play-back,
+.play-forward {
+    cursor: pointer;
+}
+
+.range {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+}
+
+.range ::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.play-repeat {
+    font-size: 20px;
+}
